@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@source "../index.html";
+@source "./**/*.{js,ts,jsx,tsx}";
+
 :root {
   --dm-blue: #3b82f6;
   --dm-orange: #f97316;
