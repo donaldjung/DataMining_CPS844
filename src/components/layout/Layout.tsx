@@ -19,14 +19,27 @@ export default function Layout({ children }: LayoutProps) {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen" style={{ background: 'linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%)' }}>
+    <div style={{ 
+      display: 'flex', 
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%)' 
+    }}>
       <Sidebar />
-      <div className="flex-1 flex flex-col ml-72">
+      <div style={{ 
+        flex: 1, 
+        display: 'flex', 
+        flexDirection: 'column', 
+        marginLeft: '288px' 
+      }}>
         <Header />
         <main 
           ref={mainRef}
-          className="flex-1 p-8 overflow-y-auto"
-          style={{ maxHeight: 'calc(100vh - 64px)' }}
+          style={{ 
+            flex: 1, 
+            padding: '32px', 
+            overflowY: 'auto',
+            maxHeight: 'calc(100vh - 64px)' 
+          }}
         >
           {children || <Outlet />}
         </main>

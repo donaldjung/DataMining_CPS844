@@ -98,32 +98,41 @@ export default function Header() {
   return (
     <>
       <header 
-        className="h-16 flex items-center justify-between px-8 border-b"
         style={{ 
+          height: '64px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0 32px',
+          borderBottom: '1px solid rgba(59, 130, 246, 0.2)',
           background: 'rgba(12, 22, 41, 0.8)',
           backdropFilter: 'blur(10px)',
-          borderColor: 'rgba(59, 130, 246, 0.2)'
         }}
       >
-        <div className="flex items-center gap-4">
-          <h2 className="text-lg font-semibold text-white">Data Mining Education</h2>
-          <span className="px-2 py-1 rounded text-xs font-medium" style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#3b82f6' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'white' }}>Data Mining Education</h2>
+          <span style={{ padding: '4px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: 500, background: 'rgba(59, 130, 246, 0.2)', color: '#3b82f6' }}>
             CPS844
           </span>
         </div>
 
         <button
           onClick={() => setIsSearchOpen(true)}
-          className="flex items-center gap-3 px-4 py-2 rounded-lg transition-all hover:bg-white/5"
           style={{ 
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            padding: '8px 16px',
+            borderRadius: '8px',
             background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(59, 130, 246, 0.2)'
+            border: '1px solid rgba(59, 130, 246, 0.2)',
+            cursor: 'pointer',
           }}
         >
-          <Search size={16} className="text-gray-400" />
-          <span className="text-gray-400 text-sm">Search documentation...</span>
-          <div className="flex items-center gap-1 ml-4">
-            <kbd className="px-2 py-0.5 rounded text-xs bg-white/10 text-gray-400 flex items-center gap-1">
+          <Search size={16} style={{ color: '#9ca3af' }} />
+          <span style={{ color: '#9ca3af', fontSize: '14px' }}>Search documentation...</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginLeft: '16px' }}>
+            <kbd style={{ padding: '2px 8px', borderRadius: '4px', fontSize: '12px', background: 'rgba(255,255,255,0.1)', color: '#9ca3af', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <Command size={10} />K
             </kbd>
           </div>
