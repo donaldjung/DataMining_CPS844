@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Sparkles, Database, Wrench, TrendingUp, Layers } from 'lucide-react';
 import CodeBlock from '../../components/code/CodeBlock';
-import OutputDisplay from '../../components/code/OutputDisplay';
 import FlowDiagram from '../../components/visualizations/FlowDiagram';
 
 const dataTypesDiagram = `

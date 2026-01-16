@@ -372,9 +372,9 @@ cost_per_fraud_missed = 500  # Lost money
 cost_per_false_alarm = 10     # Investigation cost
 total_cost = fn * cost_per_fraud_missed + fp * cost_per_false_alarm
 print(f"\\nCost Analysis:")
-print(f"  Cost per missed fraud: ${cost_per_fraud_missed}")
-print(f"  Cost per false alarm: ${cost_per_false_alarm}")
-print(f"  Total cost: ${total_cost}")`;
+print("  Cost per missed fraud: $" + str(cost_per_fraud_missed))
+print("  Cost per false alarm: $" + str(cost_per_false_alarm))
+print("  Total cost: $" + str(total_cost))`;
 
 export default function Module7_AnomalyDetection() {
   return (

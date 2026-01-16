@@ -322,17 +322,16 @@ print("CUSTOMER SEGMENTATION ANALYSIS")
 print("="*60)
 
 for i in range(best_k):
-    segment = customers[labels == i]
-    print(f"\\nSegment {i+1} ({len(segment)} customers):")
-    print(f"  Avg Age: {segment[:,0].mean():.1f} years")
-    print(f"  Avg Income: ${segment[:,1].mean():.0f}K")
-    print(f"  Avg Spending Score: {segment[:,2].mean():.1f}")
+    mask = labels == i
+    seg = customers[mask]
+    avg_age = seg[:, 0].mean()
+    avg_income = seg[:, 1].mean()
+    avg_score = seg[:, 2].mean()
     
-    # Segment description
-    age = "Young" if segment[:,0].mean() < 35 else "Middle" if segment[:,0].mean() < 50 else "Older"
-    income = "High" if segment[:,1].mean() > 60 else "Medium" if segment[:,1].mean() > 40 else "Low"
-    spending = "High" if segment[:,2].mean() > 60 else "Medium" if segment[:,2].mean() > 40 else "Low"
-    print(f"  Profile: {age}, {income} Income, {spending} Spender")`;
+    print("\\nSegment", i+1, "({} customers):".format(mask.sum()))
+    print("  Avg Age: {:.1f} years".format(avg_age))
+    print("  Avg Income: $" + "{:.0f}K".format(avg_income))
+    print("  Avg Spending Score: {:.1f}".format(avg_score))`;
 
 export default function Module6_ClusterAnalysis() {
   return (
